@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>10 Boxes with Links to JW.ORG</title>
+	<style type="text/css">
+		.box {
+			width: 150px;
+			height: 150px;
+			display: inline-block;
+			margin: 10px;
+			text-align: center;
+			background-color: #f0f0f0;
+			border: 1px solid #ccc;
+			padding-top: 60px;
+			font-size: 14px;
+			font-weight: bold;
+		}
+
+		.box:hover {
+			background-color: #ccc;
+			cursor: pointer;
+		}
+
+		/* Style the symbol inside the box */
+		.box span {
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+	<script type="text/javascript">
+		const links = [
+			{ title: 'Home', url: 'https://www.jw.org/en/', symbol: '\u{1F3E0}' },
+			{ title: 'Bible', url: 'https://www.jw.org/en/library/bible/', symbol: '\u{1F4D6}' },
+			{ title: 'Publications', url: 'https://www.jw.org/en/library/publications/', symbol: '\u{1F4DA}' },
+			{ title: 'Daily Text', url: 'https://www.jw.org/en/library/books/daily-text/', symbol: '\u{1F4C5}' },
+			{ title: 'Videos', url: 'https://www.jw.org/en/library/videos/', symbol: '\u{1F3AC}' },
+			{ title: 'Newsroom', url: 'https://www.jw.org/en/news/', symbol: '\u{1F4F0}' },
+			{ title: 'About Us', url: 'https://www.jw.org/en/about-us/', symbol: '\u{1F4AC}' },
+			{ title: 'Donate', url: 'https://donate.jw.org/ui/E/donate-home.html', symbol: '\u{1F381}' },
+			{ title: 'Online Library', url: 'https://www.jw.org/en/library/', symbol: '\u{1F4D6}' },
+			{ title: 'Contact Us', url: 'https://www.jw.org/en/contact-us/', symbol: '\u{1F4E7}' }
+		];
+
+		// loop through the links array and create a box for each link
+		for (let i = 0; i < links.length; i++) {
+			const box = document.createElement('div');
+			box.classList.add('box');
+			box.innerHTML = '<span>' + links[i].symbol + '</span>';
+			box.addEventListener('click', function() {
+				window.open(links[i].url, '_blank');
+			});
+			document.getElementById('container').appendChild(box);
+		}
+	</script>
+</body>
+</html>
